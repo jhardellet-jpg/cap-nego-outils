@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CAP PARCOURS GMS® | Découverte — CAP NEGO®</title>
+<meta name="description" content="Découvrez les décisions et prérequis à anticiper pour entrer en GMS : circuits local, régional et national.">
+<style>
+:root{--navy:#13374e;--teal:#147d87;--gold:#c9933a;--ink:#1c3542;--muted:#5d7380;--line:#d9e5e8;--bg:#f2f6f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.55 Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--navy);color:#fff;padding:20px max(20px,calc((100vw - 1060px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-size:21px;font-weight:800}.brand small{display:block;font-size:11px;font-weight:400;letter-spacing:.09em;color:#bdd9e4}
+header a{color:#fff;font-size:13px}main{max-width:1060px;margin:auto;padding:32px 20px 70px}.eyebrow{color:var(--teal);font-size:12px;letter-spacing:.11em;font-weight:800;text-transform:uppercase}
+h1{font-size:clamp(30px,4vw,44px);line-height:1.14;color:var(--navy);margin:9px 0 18px}h2{font-size:24px;color:var(--navy)}h3{color:var(--navy);margin-top:0}.lead{font-size:18px;color:#405c6d;max-width:820px}
+.card{background:white;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 5px 17px #12364a0c;margin:22px 0}
+.routes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}
+.route{border:2px solid var(--line);border-radius:12px;padding:17px;background:white;text-align:left;color:var(--ink);cursor:pointer;font:inherit}
+.route strong{display:block;color:var(--navy)}.route small{display:block;color:var(--muted);margin-top:8px;line-height:1.4}.route[aria-pressed=true]{border-color:var(--teal);background:#eaf6f5}
+label{display:block;margin:17px 0 7px;font-weight:700}select{width:100%;padding:13px;border:1px solid #abc2cb;border-radius:9px;font:inherit;background:#fff}
+button.primary,.button{background:var(--teal);border:0;color:#fff;padding:13px 18px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-block;font:700 14px Arial}
+button.primary:disabled{opacity:.55;cursor:not-allowed}.choices{display:grid;gap:10px;margin:20px 0}
+.choice{background:#fff;border:1px solid #abc2cb;padding:14px;text-align:left;border-radius:10px;font:inherit;cursor:pointer}
+.choice[aria-pressed=true]{border:2px solid var(--teal);background:#eaf6f5}
+.result{border-left:5px solid var(--gold);padding:19px;background:#f7f9fa;border-radius:8px;margin-top:19px}
+.pill{display:inline-block;padding:4px 9px;border-radius:20px;background:#e8f1f3;font-size:12px;font-weight:bold;color:var(--teal)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.secondary{color:var(--teal);background:white;border:1px solid var(--teal);border-radius:10px;padding:13px 18px;font:700 14px Arial;text-decoration:none;cursor:pointer}
+.note{font-size:13px;color:var(--muted)}footer{max-width:1060px;margin:auto;padding:0 20px 28px;color:var(--muted);font-size:12px}
+[hidden]{display:none!important}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media(max-width:700px){.routes{grid-template-columns:1fr}.card{padding:20px}header{padding:18px 20px}}
+</style></head>
+<body>
+<header><div class="brand">CAP NEGO®<small>CONSEIL · ACTION · PERFORMANCE</small></div><a href="https://conseil-action-performance.fr/">Site Conseil Action Performance</a></header>
+<main>
+<div class="eyebrow">CAP PARCOURS GMS® · Version découverte</div>
+<h1>Entrer en grande distribution : êtes-vous prêt pour le bon circuit ?</h1>
+<p class="lead">Explorez une décision commerciale sur l'un des trois circuits : local, régional ou national. Votre réponse révèle les conditions de réussite à vérifier avant de vous engager.</p>
+<div class="card"><h2>1. Choisissez votre circuit</h2>
+<div class="routes" role="group" aria-label="Circuit commercial">
+<button class="route" data-route="local" aria-pressed="false"><strong>Local</strong><small>Livraison magasin, réassort et coût de service</small></button>
+<button class="route" data-route="regional" aria-pressed="false"><strong>Régional</strong><small>Plateforme, diffusion et activation du réseau</small></button>
+<button class="route" data-route="national" aria-pressed="false"><strong>National</strong><small>Engagements commerciaux et capacité d'exécution</small></button>
+</div>
+<div id="exercise" hidden>
+<h2>2. Une décision à prendre</h2>
+<p id="scenario"></p>
+<div class="choices" id="choices" role="group" aria-label="Décision proposée"></div>
+<button class="primary" id="reveal" disabled>Voir l'analyse CAP NEGO®</button>
+<div id="feedback" class="result" hidden aria-live="polite"></div>
+</div>
+</div>
+<div class="card">
+<span class="pill">Pour aller plus loin</span>
+<h2>La simulation complète va au-delà d'une seule décision</h2>
+<p>La version V7 utilisée en atelier confronte les décisions commerciales aux prérequis déclarés de l'entreprise, puis propose un bilan contextualisé. Cette découverte n'est ni un diagnostic individuel ni une validation de conformité.</p>
+<div class="actions">
+<a class="button" href="https://score.conseil-action-performance.fr/">Évaluer ma maturité avec CAP SCORE GMS®</a>
+<a class="secondary" href="mailto:jerome.hardellet@conseil-action-performance.fr?subject=CAP%20PARCOURS%20GMS%20-%20Demande%20de%20d%C3%A9monstration">Demander un atelier ou une démonstration</a>
+</div></div>
+<p class="note">Outil pédagogique fondé sur des situations-types. Les exigences réelles dépendent du distributeur, du contrat et de la configuration logistique.</p>
+</main><footer>© 2026 CAP NEGO® — Conseil Action Performance · Version découverte distincte du simulateur V7 complet.</footer>
+<script>
+const data={
+local:{question:"Un magasin souhaite référencer vos produits mais demande des livraisons fréquentes de petites quantités. Quelle est votre première décision ?",choices:["Accepter : un référencement supplémentaire est toujours intéressant.","Évaluer le seuil de commande, le coût de livraison et les conditions de réassort avant de confirmer.","Proposer immédiatement une remise additionnelle pour conclure."],best:1,analysis:"La relation directe facilite le test commercial, mais des petites commandes peuvent absorber la marge. Vérifiez le coût de service par magasin et par tournée, le gencodage, le conditionnement (PCB), les CGV et les modalités de réassort.",attention:"Une remise ne corrige pas une logistique structurellement déficitaire."},
+regional:{question:"Une centrale régionale accepte le référencement et une livraison sur plateforme. Pouvez-vous annoncer que vos produits seront vendus dans tous les magasins ?",choices:["Oui, la plateforme assure automatiquement la présence dans le parc.","Non : distinguer magasins desservis, ciblés, activés et réellement détenteurs, puis organiser le suivi.","Oui, dès lors que le contrat commercial est signé."],best:1,analysis:"Une livraison centralisée simplifie un flux fournisseur mais ne garantit ni les commandes ni la détention en magasin. Le fonctionnement du réseau, l'activation des codes et les rotations doivent être pilotés.",attention:"Référencement régional et diffusion effective sont deux indicateurs différents."},
+national:{question:"Une enseigne nationale propose un déploiement large et plusieurs opérations promotionnelles. Que faut-il sécuriser avant l'accord ?",choices:["Prioriser le potentiel de chiffre d'affaires et traiter les contraintes après signature.","Valider capacité industrielle, coûts logistiques, engagements promotionnels et contribution économique.","Accepter les opérations sans condition pour obtenir le référencement."],best:1,analysis:"Le national apporte un potentiel de diffusion, mais aussi des exigences économiques, logistiques et promotionnelles plus lourdes. Il faut vérifier les volumes, le service, les échéances, les coûts et la valeur apportée à la catégorie.",attention:"Une hausse de diffusion ne signifie pas automatiquement une hausse de contribution."}};
+let route=null,selected=null;
+const $=id=>document.getElementById(id);
+function chooseRoute(r){route=r;selected=null;document.querySelectorAll('.route').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.route===r)));$('exercise').hidden=false;$('scenario').textContent=data[r].question;$('feedback').hidden=true;$('reveal').disabled=true;$('choices').replaceChildren();data[r].choices.forEach((t,i)=>{const b=document.createElement('button');b.type='button';b.className='choice';b.textContent=t;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{selected=i;document.querySelectorAll('.choice').forEach((x,j)=>x.setAttribute('aria-pressed',String(j===i)));$('reveal').disabled=false;$('feedback').hidden=true});$('choices').appendChild(b)});}
+document.querySelectorAll('.route').forEach(b=>b.addEventListener('click',()=>chooseRoute(b.dataset.route)));
+$('reveal').addEventListener('click',()=>{if(route===null||selected===null)return;const d=data[route];$('feedback').replaceChildren();const title=document.createElement('h3');title.textContent=selected===d.best?'Décision cohérente, sous réserve des prérequis':'Décision à reconsidérer';const p=document.createElement('p');p.textContent=d.analysis;const note=document.createElement('p');const strong=document.createElement('strong');strong.textContent='Point de vigilance : ';note.append(strong,document.createTextNode(d.attention));$('feedback').append(title,p,note);$('feedback').hidden=false;});
+</script></body></html>
