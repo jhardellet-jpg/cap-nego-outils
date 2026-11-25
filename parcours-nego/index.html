@@ -1,0 +1,37 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CAP PARCOURS NÉGO® — Démonstration</title>
+<style>
+:root{--navy:#13374e;--teal:#147d87;--line:#d9e5e8}*{box-sizing:border-box}body{margin:0;background:#f2f6f7;color:#1c3542;font:16px/1.55 Arial,sans-serif}
+header{background:var(--navy);color:white;padding:18px max(20px,calc((100vw - 1000px)/2));display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}header a{color:white}
+main{max-width:1000px;margin:auto;padding:28px 20px 55px}h1,h2{color:var(--navy);line-height:1.2}h1{font-size:clamp(28px,4vw,42px)}.card{background:white;padding:25px;border:1px solid var(--line);border-radius:15px;margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.field{display:flex;flex-direction:column;gap:6px;margin:10px 0}.field label{font-size:14px;font-weight:bold}.field input{padding:12px;border:1px solid #abc3ca;border-radius:9px;font:inherit;width:100%}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.metric{padding:14px;background:#edf5f5;border-radius:10px}.metric b{display:block;color:var(--navy);font-size:22px}.metric small{color:#536d77}.note{background:#fff8ed;border-left:4px solid #c9933a;padding:14px;margin-top:17px}
+a.btn{display:inline-block;padding:12px 17px;margin:5px 8px 5px 0;background:var(--teal);color:white;border-radius:9px;text-decoration:none;font-weight:bold}.small{font-size:13px;color:#526a80}#contributionBox[hidden]{display:none}
+@media(max-width:700px){.grid,.metrics{grid-template-columns:1fr}.card{padding:19px}}
+</style></head><body><header><strong>CAP NEGO® / CAP PARCOURS NÉGO®</strong><a href="https://outils.conseil-action-performance.fr/">Retour aux outils</a></header>
+<main><p style="color:#147d87;font-weight:bold">DÉMONSTRATION PUBLIQUE · CAS PÉDAGOGIQUE FICTIF</p><h1>Quelle contrepartie demander à votre acheteur ?</h1><p>Découvrez le raisonnement économique de la V5 simplifiée : distinguer HMP demandée, seuil de maintien et offre acheteur, puis tester un seul levier commercial : l'opération prospectus.</p>
+<section class="card"><h2>1. Mesurer l'écart économique</h2><div class="grid">
+<div class="field"><label for="ca">CA annuel fournisseur HT avec l'enseigne (€)</label><input id="ca" type="number" min="0" value="500000"></div>
+<div class="field"><label for="ask">HMP demandée (%)</label><input id="ask" type="number" step=".25" value="4"></div>
+<div class="field"><label for="maint">HMP nécessaire au maintien (%)</label><input id="maint" type="number" step=".25" value="2.5"></div>
+<div class="field"><label for="buyer">HMP proposée par l'acheteur (%)</label><input id="buyer" type="number" step=".25" value="1"></div></div>
+<div class="metrics"><div class="metric"><small>Écart de négociation</small><b id="gap">—</b></div><div class="metric"><small>Écart sous le seuil</small><b id="under">—</b></div><div class="metric"><small>Montant indicatif à compenser</small><b id="shortfall">—</b></div></div><p class="small">Montant indicatif = max(0, HMP maintien − HMP acheteur) × CA HT / 100, sur une assiette et un volume constants. Ce n'est pas automatiquement une perte comptable.</p></section>
+<section class="card"><h2>2. Un levier : l'opération prospectus</h2><p>Estimez le chiffre d'affaires supplémentaire éventuel d'une opération. Il ne doit pas être confondu avec la contribution économique additionnelle.</p><div class="grid">
+<div class="field"><label for="stores">Magasins concernés</label><input id="stores" type="number" value="100" min="0"></div>
+<div class="field"><label for="vmh">VMH habituelle (unités / magasin / semaine)</label><input id="vmh" type="number" value="12" min="0"></div>
+<div class="field"><label for="weeks">Semaines d'activation (max. 52)</label><input id="weeks" type="number" value="2" min="0" max="52"></div>
+<div class="field"><label for="price">Prix net HT fournisseur par unité (€)</label><input id="price" type="number" value="2" min="0" step=".1"></div>
+<div class="field"><label for="mult">Multiplicateur de rotation</label><input id="mult" type="number" value="2" min="1" step=".1"></div></div>
+<div class="metrics"><div class="metric"><small>Unités additionnelles</small><b id="units">—</b></div><div class="metric"><small>CA additionnel potentiel</small><b id="extra">—</b></div></div>
+<p><label><input id="optional" type="checkbox"> Estimer aussi la contribution additionnelle (facultatif)</label></p>
+<div id="contributionBox" hidden><div class="grid"><div class="field"><label for="rate">Taux de contribution sur CA additionnel (%)</label><input id="rate" type="number" value="20" min="0" max="100"></div><div class="field"><label for="cost">Coût additionnel de l'opération (€)</label><input id="cost" type="number" value="0" min="0"></div></div><div class="note"><strong>Contribution estimée : <span id="contrib">—</span></strong><p id="reading"></p></div></div>
+<div class="note">Les ventes et contributions sont des scénarios pédagogiques, non des engagements de résultats. Seules des contreparties précises, écrites et suivies peuvent être négociées utilement.</div></section>
+<section class="card"><h2>3. De la simulation à la négociation</h2><p>Une contrepartie doit être définie : magasins ciblés, calendrier, présence prospectus, mise en place, engagements réciproques, financement et mesure des résultats.</p><a class="btn" href="mailto:jerome.hardellet@conseil-action-performance.fr?subject=CAP%20PARCOURS%20NEGO%20-%20Demande%20de%20d%C3%A9monstration">Découvrir la V5 complète en atelier</a><a class="btn" href="https://score.conseil-action-performance.fr/" target="_blank" rel="noopener noreferrer">Lancer CAP SCORE GMS®</a></section>
+<p class="small">Version découverte distincte de la V5 complète. Pas d'envoi des saisies à un serveur. L'exemple ne mesure ni cannibalisation, ni variation du mix, ni coûts non renseignés.</p></main>
+<script>
+'use strict';const $=id=>document.getElementById(id),val=id=>Number($(id).value)||0,eu=x=>x.toLocaleString('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0}),int=x=>x.toLocaleString('fr-FR',{maximumFractionDigits:0});
+function update(){let gap=val('ask')-val('buyer'),under=Math.max(0,val('maint')-val('buyer')),loss=under*Math.max(0,val('ca'))/100;
+$('gap').textContent=gap.toLocaleString('fr-FR',{maximumFractionDigits:2})+' pts';$('under').textContent=under.toLocaleString('fr-FR',{maximumFractionDigits:2})+' pts';$('shortfall').textContent=eu(loss);
+let units=Math.max(0,val('stores'))*Math.max(0,val('vmh'))*Math.max(0,Math.min(52,val('weeks')))*Math.max(0,val('mult')-1),extra=units*Math.max(0,val('price'));$('units').textContent=int(units);$('extra').textContent=eu(extra);
+$('contributionBox').hidden=!$('optional').checked;if($('optional').checked){let contribution=extra*Math.max(0,Math.min(100,val('rate')))/100-Math.max(0,val('cost'));$('contrib').textContent=eu(contribution);$('reading').textContent='À rapprocher de '+eu(loss)+' d’écart économique indicatif, sous réserve de la comparabilité des périodes, assiettes et coûts.'}}
+['ca','ask','maint','buyer','stores','vmh','weeks','price','mult','rate','cost'].forEach(id=>$(id).addEventListener('input',update));$('optional').addEventListener('change',update);update();
+</script></body></html>
